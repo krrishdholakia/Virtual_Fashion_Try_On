@@ -31,8 +31,12 @@ gdown.download(url, output, quiet=False)
 
 os.mkdir("U-2-Net/saved_models/u2net")
 os.mkdir("U-2-Net/saved_models/u2netp")
-gdown.download("https://drive.google.com/uc?id=1rbSTGKAE-MTxBYHd-51l2hMOQPT_7EPy", output="./U-2-Net/saved_models/u2netp/u2netp.pth")
-gdown.download("https://drive.google.com/uc?id=1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ", output="./U-2-Net/saved_models/u2net/u2net.pth")
+limit = 0
+while not os.path.exists("./U-2-Net/saved_models/u2netp/u2netp.pth") && limit < 5:
+	gdown.download("https://drive.google.com/uc?id=1rbSTGKAE-MTxBYHd-51l2hMOQPT_7EPy", output="./U-2-Net/saved_models/u2netp/u2netp.pth")
+limit = 0 #reset limit
+while not os.path.exists("./U-2-Net/saved_models/u2net/u2net.pth") && limit < 5:
+	gdown.download("https://drive.google.com/uc?id=1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ&confirm=t", output="./U-2-Net/saved_models/u2net/u2net.pth")
 os.chdir("./U-2-Net")
 print(os.getcwd())
 import u2net_load
