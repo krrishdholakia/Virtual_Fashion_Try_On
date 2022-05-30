@@ -40,6 +40,7 @@ while not os.path.exists("./U-2-Net/saved_models/u2net/u2net.pth") and limit < 5
 	gdown.download("https://drive.google.com/uc?id=1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ&confirm=t", output="./U-2-Net/saved_models/u2net/u2net.pth")
 	limit += 1
 os.chdir("./U-2-Net")
+st.write('os.getcwd()', os.getcwd())
 print(os.getcwd())
 import u2net_load
 import u2net_run
