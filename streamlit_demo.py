@@ -34,7 +34,7 @@ os.mkdir("U-2-Net/saved_models/u2netp")
 gdown.download("https://drive.google.com/uc?id=1rbSTGKAE-MTxBYHd-51l2hMOQPT_7EPy", output="./U-2-Net/saved_models/u2netp/u2netp.pth")
 gdown.download("https://drive.google.com/uc?id=1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ", output="./U-2-Net/saved_models/u2net/u2net.pth")
 os.chdir("./U-2-Net")
-print(os.cwd())
+print(os.getcwd())
 import u2net_load
 import u2net_run
 u2net = u2net_load.model(model_name = 'u2netp')
