@@ -7,12 +7,15 @@ import os
 import gdown
 import tempfile
 import shutil
+from git import Repo
 
 temp_dir = tempfile.TemporaryDirectory()
 Data_preprocessing = tempfile.TemporaryDirectory(dir=temp_dir.name)
 st.write('created temporary directory', Data_preprocessing.name)
 
 st.title('Virtual Try-On')
+
+os.chdir("./Virtual_Fashion_Try_On")
 
 # Download Caffe Model for pose 
 gdown.download('https://drive.google.com/uc?id=1hOHMFHEjhoJuLEQY0Ndurn5hfiA9mwko', "./pose/")
