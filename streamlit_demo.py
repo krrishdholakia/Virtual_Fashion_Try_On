@@ -41,6 +41,7 @@ while not os.path.exists("./U-2-Net/saved_models/u2net/u2net.pth") and limit < 5
 	limit += 1
 os.chdir("./U-2-Net")
 st.write('os.getcwd()', os.getcwd())
+st.write("os.path.exists: ", os.path.exists("./u2net_load.py"))
 print(os.getcwd())
 import u2net_load
 import u2net_run
