@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image 
 import PIL 
 import os 
+import sys
 import gdown
 import tempfile
 import shutil
@@ -43,6 +44,7 @@ os.chdir("./U-2-Net")
 st.write('os.getcwd()', os.getcwd())
 st.write("os.path.exists: ", os.path.exists("./u2net_load.py"))
 print(os.getcwd())
+sys.path.append(os.path.abspath("./"))
 import u2net_load
 import u2net_run
 u2net = u2net_load.model(model_name = 'u2netp')
